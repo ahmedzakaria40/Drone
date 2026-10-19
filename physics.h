@@ -8,7 +8,13 @@ typedef struct {
 }DroneState; /*present drone coordinations */
 
 typedef struct {
-    double S[50];
-    
-}Euler_Method
+    double mass ; 
+    double Inertia ; 
+    double drag ; 
+    double g ; 
+}Parameters ; 
 
+typedef struct {
+    double thrust ; 
+    double torque ; 
+}ControlInput ;
