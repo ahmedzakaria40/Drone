@@ -16,8 +16,10 @@ DroneState Derivative(DroneState s , double tau ,double T , Parameters p){
     d.y=s.vy ;
     d.theta =s.omega;
 
-    d.vx = -(T/p.mass) ;
-
+    d.vx = -(T/p.mass) * sin(s.theta) - (p.drag/p.mass) * s.vy ;
+    d.vy= (T/p.mass) * cos(s.theta) - p.g - (p.drag / p.mass) * s.vy ;
+    d.omega = tau / p.Inertia ; 
+    return d ;
 }
 int main(void){
     return 0;

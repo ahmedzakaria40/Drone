@@ -3,15 +3,15 @@ typedef struct {
     double y; 
     double vx ;
     double vy ;
-    double  theta ;
-    double omega ;
+    double  theta ; /* is the angular of the force of T */
+    double omega ; /* omega (ω) is the angular velocity par rapport à z axis */
 }DroneState; /*present drone coordinations */
 
 typedef struct {
     double mass ; 
     double Inertia ; 
-    double drag ; 
-    double g ; 
+    double drag ; /* drag is the force opposed to the velocity vector */ 
+    double g ; /* this is constant g=9,8 N with N is newton */ 
 }Parameters ; 
 
 typedef struct {
