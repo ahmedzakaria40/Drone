@@ -33,7 +33,7 @@ int main(void){
     ControlInput u ={12.0 ,0.0} ;
     for (int i =0 ; i<100 ; i++){
         n=euler_step(n,u,p,0.01);
-        fprintf(f,"%f %f %f %f\n",(i+1)*0.01, n.x ,n.y,n.vx);
+        fprintf(f,"%f,%f,%f,%f\n",(i+1)*0.01, n.x ,n.y,n.vx);
     }
     fclose(f) ;
     return 0;
