@@ -28,9 +28,11 @@ DroneState euler_step(DroneState s , ControlInput u , Parameters p , double h){
 int main(void){
     DroneState n={0} ;
     FILE *f= fopen("traj.csv","w");
-    fprintf(f,"t,x,y,theta\n") ;
+
     Parameters p ={1.0,0.01,0.0,9.81} ;
     ControlInput u ={12.0 ,0.0} ;
+    fprintf(f, "t,x,y,theta\n");
+
     for (int i =0 ; i<100 ; i++){
         n=euler_step(n,u,p,0.01);
         fprintf(f,"%f,%f,%f,%f\n",(i+1)*0.01, n.x ,n.y,n.vx);
